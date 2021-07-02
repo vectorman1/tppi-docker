@@ -16,8 +16,8 @@ RUN	mkdir /data
 WORKDIR	/data
 
 
-RUN	wget "http://servers.technicpack.net/Technic/servers/tppi/TPPIServer-v1.1.2a.zip"
-RUN	unzip TPPIServer-v1.1.2a.zip && rm TPPIServer-v1.1.2a.zip
+RUN	wget "https://dystopia.systems/tppi-server-1.1.3a.zip"
+RUN	unzip tppi-server-1.1.3a.zip && rm tppi-server-1.1.3a.zip
 
 # Load in all of our config files.
 ADD /ServerStart.sh /data
