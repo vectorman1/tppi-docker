@@ -15,7 +15,7 @@ RUN	mkdir /data
 
 WORKDIR	/data
 
-# download technicpack
+
 RUN	wget "http://servers.technicpack.net/Technic/servers/tppi/TPPIServer-v1.1.2a.zip"
 RUN	unzip TPPIServer-v1.1.2a.zip && rm TPPIServer-v1.1.2a.zip
 
