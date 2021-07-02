@@ -16,4 +16,4 @@ RUN apt-get update \
 EXPOSE 25565 25565/udp
 
 WORKDIR /minecraft
-CMD ["./ServerStart.sh"]
+ENTRYPOINT ["./ServerStart.sh"]
