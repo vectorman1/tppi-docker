@@ -1,4 +1,4 @@
-FROM	ubuntu:trusty
+FROM	ubuntu
 
 # 25565 is for minecraft
 EXPOSE	25565
@@ -8,7 +8,7 @@ ENV    DEBIAN_FRONTEND noninteractive
 
 # Download and install everything from the repos.
 RUN    apt-get --quiet --yes update && apt-get --quiet --yes upgrade && apt-get --quiet --yes clean
-RUN    apt-get --quiet --yes install wget unzip openjdk-7-jre-headless && apt-get --quiet --yes clean
+RUN    apt-get --quiet --yes install wget unzip openjdk-8-jre-headless && apt-get --quiet --yes clean
 
 # create defalt directory
 RUN	mkdir /data
