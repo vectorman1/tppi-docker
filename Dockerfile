@@ -1,7 +1,7 @@
 FROM openjdk:8-jre-slim-buster
 
 RUN apt-get update \
-    && apt-get install -y curl unzip \
+    && apt-get install -y wget unzip \
     && mkdir /minecraft \
     && cd /minecraft \
     && wget http://servers.technicpack.net/Technic/servers/tppi/TPPIServer-v1.1.2a.zip \
