@@ -8,21 +8,21 @@ ENV    DEBIAN_FRONTEND noninteractive
 
 # Download and install everything from the repos.
 RUN    apt-get --quiet --yes update && apt-get --quiet --yes upgrade && apt-get --quiet --yes clean
-RUN    apt-get --quiet --yes install curl unzip openjdk-7-jre-headless && apt-get --quiet --yes clean
+RUN    apt-get --quiet --yes install wget unzip openjdk-8-jre-headless && apt-get --quiet --yes clean
 
 # create defalt directory
 RUN	mkdir /data
 
-# Load in all of our config files.
-ADD ServerStart.sh /data
-ADD server.properties /data
-
 WORKDIR	/data
 
 # download technicpack
-RUN	curl -s "http://servers.technicpack.net/Technic/servers/tppi/TPPIServer-v1.1.2a.zip" -o TPPIServer-v1.1.2a.zip
+RUN	wget "http://servers.technicpack.net/Technic/servers/tppi/TPPIServer-v1.1.2a.zip"
 #ADD	BTeam_Server_v1.0.12a.zip /data/BTeam_Server_v1.0.12a.zip
 RUN	unzip TPPIServer-v1.1.2a.zip && rm TPPIServer-v1.1.2a.zip
+
+# Load in all of our config files.
+ADD /ServerStart.sh /data
+ADD /server.properties /data
 
 # disable mods
 #RUN	mkdir -p mods/disabled
